@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import SearchContainer from "./Containers/SearchContainer"
+import SearchContainer from "./Containers/SearchContainer.jsx"
 
 function App() {
   return (
