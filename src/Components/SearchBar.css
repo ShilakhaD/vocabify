@@ -6,3 +6,11 @@
     transform: scale(1.5);
 }
 
+.searchBar {
+    padding: 50px;
+}
+
+.searchLabel {
+    color: white
+}
+

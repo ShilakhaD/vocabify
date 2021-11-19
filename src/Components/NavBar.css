@@ -1,0 +1,41 @@
+.NavBar {
+    background-color: #000080;
+    padding: 20px;
+    position: sticky;
+    
+}
+
+.NavBar .NavLinks {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.NavBar .NavLinks a{
+    color: white;
+    text-decoration: none;
+}
+
+.NavBar .NavLinks .siteName {
+    color: rgb(72, 206, 72);
+    font-weight: bold;
+    font-size: large;
+    
+}
+
+.NavBar .NavLinks .actionButtons {
+   display: flex;
+   justify-content: space-between;
+}
+
+.NavBar .NavLinks .actionButtons .login {
+    color: green;
+    background-color:  white;
+    border: 2px solid;
+    margin-right: 12px;
+}
+
+.NavBar .NavLinks .actionButtons .signUp {
+    color: green;
+    background-color:  rgb(235, 224, 224);
+    border: 2px solid;
+}
