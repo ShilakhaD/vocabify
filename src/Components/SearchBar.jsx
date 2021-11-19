@@ -18,8 +18,8 @@ const SearchBar = (props) => {
     }
 
     return (
-        <div>
-            <h1>Look up a word, Learn it forever!</h1>
+        <div className='searchBar'>
+            <h1 className='searchLabel'>Look up a word, Learn it forever!</h1>
             <TextField
                 label="Enter your word"
                 className='searchTextField'
