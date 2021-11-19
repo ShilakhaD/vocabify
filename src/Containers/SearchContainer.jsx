@@ -19,10 +19,10 @@ class SearchContainer extends React.Component {
         try {
             const result =  await axios.get(`https://wordsapiv1.p.rapidapi.com/words/${wordToSearch}`, {
             headers: {
-                'x-rapidapi-host': HOSTURL,
-                'x-rapidapi-key': process.env.REACT_APP_KEY
+                [HOSTHEADER]: HOSTURL,
+                [KEYHEADER]: process.env.REACT_APP_KEY
             }})
-        this.setState({wordDetails: result.data.results, error:{}})
+            this.setState({wordDetails: result.data.results, error:{}})
         } catch(error) {
             this.setState({wordDetails: {}, error: error.response})
         } 
@@ -34,16 +34,16 @@ class SearchContainer extends React.Component {
             <SearchBar 
                 getWordData={this.getWordData}
             />
+
             {this.state.wordDetails.length > 0 ?
-                <ResultList
-                    data = {this.state.wordDetails}
-                />
-            : null}
+            <ResultList
+                data = {this.state.wordDetails}
+            />: null}
+
             {this.state.error.hasOwnProperty('status') ?  
-                <ErrorNotification
-                    status = {this.state.error}
-                />
-            :null}
+            <ErrorNotification
+                error = {this.state.error}
+            />:null}
         </div>
         )
     }
