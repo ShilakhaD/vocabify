@@ -34,8 +34,6 @@ const SearchBar = (props) => {
                 </InputAdornment>
                 )}}
             />
-            
-            
         </div>
     )
     

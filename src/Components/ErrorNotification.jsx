@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './ErrorNotification.css'
 
 const ErrorNotification = (props) => {
+    console.log(props, "props in error component")
     const [alertState, setAlertState] =  useState(true)
     const [alertText, setAlertText] = useState('')
 
 useEffect(() => {
-    if(props.status === 404){
+    if(props.status.status === 404){
         setAlertText('Oops! Looks like the word does not exist. Please check your word and try again')
     }
-    if(props.status === 500){
+    if(props.status.status === 500){
         setAlertText('Oops! Something went wrong, please check back in a few momemts')
     }
 })

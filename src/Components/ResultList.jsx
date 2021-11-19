@@ -8,9 +8,9 @@ const ResultList = (props) => {
                 {props.data.map(meaning => {
                     return(  
                         <div>
-                        <li>
-                            {meaning.definition}
-                        </li>
+                            <li>
+                                {meaning.definition}
+                            </li>
                         </div>
                     )
                 })}

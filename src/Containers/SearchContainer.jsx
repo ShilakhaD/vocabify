@@ -22,30 +22,28 @@ class SearchContainer extends React.Component {
                 'x-rapidapi-host': HOSTURL,
                 'x-rapidapi-key': process.env.REACT_APP_KEY
             }})
-        this.setState({wordDetails: result.data.results})
-        this.setState({error:{}})
+        this.setState({wordDetails: result.data.results, error:{}})
         } catch(error) {
-            this.setState({wordDetails: {}})
-            this.setState({error: error.response})
+            this.setState({wordDetails: {}, error: error.response})
         } 
     }
 
     render(){
     return (
         <div>
-        <SearchBar 
-            getWordData={this.getWordData}
-        />
-        {this.state.wordDetails.length > 0 ?
-            <ResultList
-                data = {this.state.wordDetails}
+            <SearchBar 
+                getWordData={this.getWordData}
             />
-        : null}
-        {this.state.error.hasOwnProperty('status') ?  
-            <ErrorNotification
-                status = {this.state.error.status}
-            />
-        :null}
+            {this.state.wordDetails.length > 0 ?
+                <ResultList
+                    data = {this.state.wordDetails}
+                />
+            : null}
+            {this.state.error.hasOwnProperty('status') ?  
+                <ErrorNotification
+                    status = {this.state.error}
+                />
+            :null}
         </div>
         )
     }
